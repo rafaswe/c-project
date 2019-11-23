@@ -1,0 +1,16 @@
+#include<stdio.h>
+long long int rec(long long int n)
+{
+    return (n==0)?0:((n%10)+rec(n/10));
+
+}
+int main()
+{
+   long long int n;
+    scanf("%lld",&n);
+    long long int recc=rec(n);
+    while(recc>10)
+    recc=rec(recc);
+    printf("%d",recc);
+
+}
