@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char string[100];
+    char find,ch;
+    int len,j,i;
+    gets(string);
+    fflush(stdin);
+    scanf("%c",&find);
+    fflush(stdin);
+    scanf("%c",&ch);
+    fflush(stdin);
+    len=strlen(string);
+    for(i=0;i<len;i++)
+    {
+        if(string[i]==find)
+        {
+            len++;
+            for( j=len;j>i;j--)
+            {
+                string[j]=string[j-1];
+            }
+            string[i+1]=ch;
+        }
+    }
+    printf("%s",string);
+}
